@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for index12306-all" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../apache-maven-3.6.1-bin/apache-maven-3.6.1/mvn_repo/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
+          <entry name="$PROJECT_DIR$/../../../apache-maven-3.6.1-bin/apache-maven-3.6.1/mvn_repo/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+          <entry name="$PROJECT_DIR$/../../../apache-maven-3.6.1-bin/apache-maven-3.6.1/mvn_repo/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="index12306-distributedid-spring-boot-starter" />
+        <module name="distributedid" />
+        <module name="index12306-base-spring-boot-starter" />
+        <module name="index12306-convention-spring-boot-starter" />
+        <module name="user-service" />
+        <module name="index12306-common-spring-boot-starter" />
+        <module name="ticket-service" />
+        <module name="idempotent" />
+        <module name="index12306-designpattern-spring-boot-starter" />
+        <module name="common" />
+        <module name="index12306-database-spring-boot-starter" />
+        <module name="web" />
+        <module name="index12306-idempotent-spring-boot-starter" />
+        <module name="index12306-web-spring-boot-starter" />
+        <module name="order-service" />
+        <module name="index12306-user-spring-boot-starter" />
+        <module name="index12306-cache-spring-boot-starter" />
+        <module name="user" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="base" target="17" />
+      <module name="cache" target="17" />
+      <module name="convention" target="17" />
+      <module name="convention (1)" target="17" />
+      <module name="datebase" target="17" />
+      <module name="designpattern" target="17" />
+      <module name="talon" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

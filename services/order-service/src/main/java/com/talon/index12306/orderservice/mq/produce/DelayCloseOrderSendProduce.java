@@ -1,0 +1,64 @@
+package com.talon.index12306.orderservice.mq.produce;
+
+import cn.hutool.core.util.StrUtil;
+import com.talon.index12306.orderservice.common.constant.OrderRocketMQConstant;
+import com.talon.index12306.orderservice.mq.domain.MessageWrapper;
+import com.talon.index12306.orderservice.mq.event.DelayCloseOrderEvent;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.common.message.MessageConst;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.stereotype.Component;
+
+import java.util.UUID;
+
+/**
+ * 延迟关闭订单生产者
+ * 公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
+ */
+@Slf4j
+@Component
+public class DelayCloseOrderSendProduce extends AbstractCommonSendProduceTemplate<DelayCloseOrderEvent> {
+
+
+    private final ConfigurableEnvironment environment;
+
+    public DelayCloseOrderSendProduce(@Autowired RocketMQTemplate rocketMQTemplate, @Autowired ConfigurableEnvironment environment) {
+        super(rocketMQTemplate);
+        this.environment = environment;
+    }
+
+    @Override
+    protected BaseSendExtendDTO buildBaseSendExtendParam(DelayCloseOrderEvent messageSendEvent) {
+        return BaseSendExtendDTO.builder()
+                .eventName("延迟关闭订单")
+                .keys(messageSendEvent.getOrderSn())
+                //作用：对字符串里的 占位符（${...}） 进行解析和替换。
+                .topic(environment.resolvePlaceholders(OrderRocketMQConstant.ORDER_DELAY_CLOSE_TOPIC_KEY))
+                .tag(environment.resolvePlaceholders(OrderRocketMQConstant.ORDER_DELAY_CLOSE_TAG_KEY))
+                .sentTimeout(2000L)
+                // RocketMQ 延迟消息级别 1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h
+                .delayLevel(14)
+                .build();
+    }
+
+    /**
+     * <p>{@link MessageBuilder#withPayload(Object)} {@code  参数类型 MessageWrapper }  </p>
+     * {@link MessageWrapper#MessageWrapper(String, Object)}  }
+     *
+     * @param messageSendEvent 订单参数
+     * @param requestParam     封装消息属性的标志 配置
+     */
+    @Override
+    protected Message<?> buildMessage(DelayCloseOrderEvent messageSendEvent, BaseSendExtendDTO requestParam) {
+        String keys = StrUtil.isEmpty(requestParam.getKeys()) ? UUID.randomUUID().toString() : requestParam.getKeys();
+        return MessageBuilder
+                .withPayload(new MessageWrapper<>(requestParam.getKeys(), messageSendEvent))
+                .setHeader(MessageConst.PROPERTY_KEYS, keys)
+                .setHeader(MessageConst.PROPERTY_TAGS, requestParam.getTag())
+                .build();
+    }
+}

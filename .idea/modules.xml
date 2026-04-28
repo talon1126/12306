@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/frameworks/base/index12306-base-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/base/index12306-base-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/cache/index12306-cache-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/cache/index12306-cache-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/convention/index12306-convention-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/convention/index12306-convention-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/order-service/order-service.iml" filepath="$PROJECT_DIR$/services/order-service/order-service.iml" />
+    </modules>
+  </component>
+</project>
