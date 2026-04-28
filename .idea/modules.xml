@@ -3,9 +3,18 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/frameworks/base/index12306-base-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/base/index12306-base-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/bizs/index12306-bizs-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/bizs/index12306-bizs-spring-boot-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/frameworks/cache/index12306-cache-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/cache/index12306-cache-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/common/index12306-common-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/common/index12306-common-spring-boot-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/frameworks/convention/index12306-convention-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/convention/index12306-convention-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/database/index12306-database-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/database/index12306-database-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/designpattern/index12306-designpattern-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/designpattern/index12306-designpattern-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/idempotent/index12306-idempotent-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/idempotent/index12306-idempotent-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/index12306-services.iml" filepath="$PROJECT_DIR$/services/index12306-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/bizs/user/index12306-user-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/bizs/user/index12306-user-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/web/index12306-web-spring-boot-starter.iml" filepath="$PROJECT_DIR$/frameworks/web/index12306-web-spring-boot-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/order-service/order-service.iml" filepath="$PROJECT_DIR$/services/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/user-service/user-service.iml" filepath="$PROJECT_DIR$/services/user-service/user-service.iml" />
     </modules>
   </component>
 </project>
